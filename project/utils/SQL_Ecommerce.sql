@@ -28,4 +28,4 @@ INSERT INTO product (sku, name, description, image_url, active, units_in_stock, 
 ('Tastatura-1', 'Tastatura', 'Learn JavaScript at your own pace. The author explains how the technology works in easy-to-understand language. This book includes working examples that you can apply to your own projects. Purchase the book and get started today!', 'assets/images/products/books/book-luv2code-1001.png', TRUE, 100, 20.99, 2, NOW());
 
 select *from product
-
+laptop1

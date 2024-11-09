@@ -10,13 +10,14 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 import { SearchComponent } from './components/search/search.component';
+import { ProductService } from './services/product.service';
 
 const routes: Routes = [
-  // {path: 'products/:id', component: ProductDetailsComponent},
-  // {path: 'search/:keyword', component: ProductListComponent},
-  // {path: 'category/:id', component: ProductListComponent},
-  // {path: 'category', component: ProductListComponent},
-  // {path: 'products', component: ProductListComponent},
+  {path: 'products/:id', component: ProductDetailsComponent},
+  {path: 'search/:keyword', component: ProductListComponent},
+  {path: 'category/:id', component: ProductListComponent},
+  {path: 'category', component: ProductListComponent},
+  {path: 'products', component: ProductListComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', redirectTo: '/products', pathMatch: 'full'}
 ];
@@ -35,7 +36,7 @@ const routes: Routes = [
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

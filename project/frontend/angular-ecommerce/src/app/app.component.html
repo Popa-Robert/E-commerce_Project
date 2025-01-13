@@ -3,10 +3,7 @@
   <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
       <a routerLink="/products">
-        <img
-          src="assets/images/logo.png"
-          class="img-responsive"
-        />
+        <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive" />
       </a>
     </div>
     <app-product-category-menu></app-product-category-menu>
@@ -20,12 +17,26 @@
         <div class="container-fluid">
           <div class="header-wrap">
             <app-search></app-search>
-
+            <app-cart-status routerLink="/cart"></app-cart-status>
+    
+            <!-- Login Button -->
+            <button *ngIf="!isLoggedIn" class="btn btn-primary" [routerLink]="['/login']">Login</button>
+    
+            <!-- User Greeting and Logout Button -->
+            <button *ngIf="isLoggedIn" class="btn btn-primary">
+              Hello, {{ userEmail }}
+            </button>
+            <button *ngIf="isLoggedIn" class="btn btn-danger" (click)="onLogout()">Logout</button>
+    
+            <!-- Add Product and Category Buttons -->
+            <button class="btn btn-primary" [routerLink]="['/product-form']">Add Product</button>
+            <button class="btn btn-primary" [routerLink]="['/category-form']">Add Category</button>
           </div>
           <div class="account-wrap"></div>
         </div>
       </div>
     </header>
+    
     <!-- END HEADER DESKTOP-->
 
     <!-- MAIN CONTENT-->
